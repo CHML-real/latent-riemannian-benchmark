@@ -1,0 +1,75 @@
+{
+  "benchmark_id": "lrw_euclidean_bvp_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_euclidean_bvp_solver",
+  "manifold": "euclidean",
+  "method": "lrw_euclidean_bvp_geodesic_path",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "dimension": 2,
+  "batch_size": 1,
+  "n_points_requested": 24,
+  "solver_n_steps": 20,
+  "solver_step_size": 0.05,
+  "solver_lr": 0.1,
+  "solver_max_iter": 50,
+  "solver_tol": 0.001,
+  "status": "failure",
+  "lrw": {
+    "available": true,
+    "bvp_class_path": "lrw.geodesic.bvp.BVPSolver",
+    "base_metric_class_path": "lrw.metric.base.RiemannianMetric",
+    "reason": null,
+    "metric_class": "LRBenchEuclideanMetric",
+    "solver_class": "BVPSolver",
+    "raw_path_shape": [
+      24,
+      1,
+      2
+    ]
+  },
+  "solver_info": {
+    "n_iter": 1,
+    "final_error": 1.0536712125031045e-07,
+    "converged": true
+  },
+  "metrics": {
+    "lrw_euclidean_bvp_endpoint_error_start_mean": 0.0,
+    "lrw_euclidean_bvp_endpoint_error_end_mean": 0.13252763450145721,
+    "lrw_euclidean_bvp_endpoint_error_mean": 0.06626381725072861,
+    "lrw_euclidean_bvp_endpoint_error_max": 0.13252763450145721,
+    "lrw_euclidean_bvp_true_distance_mean": 0.14407502114772797,
+    "lrw_euclidean_bvp_path_distance_mean": 0.1960948258638382,
+    "lrw_euclidean_bvp_distance_error_mean": 0.3610605299472809,
+    "lrw_euclidean_bvp_distance_error_max": 0.3610605299472809,
+    "lrw_euclidean_bvp_has_nan": false,
+    "lrw_euclidean_bvp_has_inf": false,
+    "lrw_euclidean_bvp_nan_rate": 0.0,
+    "lrw_euclidean_bvp_inf_rate": 0.0,
+    "lrw_euclidean_bvp_energy_mean": 0.0019226588774472475,
+    "lrw_euclidean_bvp_energy_max": 0.0019226588774472475,
+    "lrw_euclidean_bvp_energy_min": 0.0019226588774472475,
+    "straight_euclidean_energy_mean": 0.0009025047766044736,
+    "lrw_euclidean_bvp_energy_ratio_over_straight": 2.130358672095827,
+    "lrw_euclidean_bvp_path_shape": [
+      24,
+      1,
+      2
+    ],
+    "lrw_euclidean_bvp_num_points_returned": 24,
+    "available": true,
+    "runtime_ms": 955.4931000457145,
+    "peak_memory_mb": 0.0,
+    "solver_info_key_count": 3
+  },
+  "failure": {
+    "has_failure": true,
+    "failure_type": "GEO_F01_ENDPOINT_MISS",
+    "message": "LRW Euclidean BVP path endpoints deviate beyond tolerance"
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

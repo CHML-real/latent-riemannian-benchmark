@@ -1,0 +1,64 @@
+{
+  "benchmark_id": "lrw_slerp_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_slerp",
+  "manifold": "sphere",
+  "method": "lrw_slerp_path",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "dimension": 3,
+  "batch_size": 1,
+  "n_points_requested": 32,
+  "status": "success",
+  "lrw": {
+    "available": true,
+    "function_path": "lrw.geodesic.slerp_path",
+    "reason": null,
+    "raw_return_type": "Tensor",
+    "raw_path_shape": [
+      32,
+      1,
+      3
+    ]
+  },
+  "metrics": {
+    "lrw_slerp_endpoint_error_start_mean": 0.0,
+    "lrw_slerp_endpoint_error_end_mean": 0.0,
+    "lrw_slerp_endpoint_error_mean": 0.0,
+    "lrw_slerp_endpoint_error_max": 0.0,
+    "lrw_slerp_sphere_radial_error_mean": 0.0,
+    "lrw_slerp_sphere_radial_error_max": 0.0,
+    "lrw_slerp_has_nan": false,
+    "lrw_slerp_has_inf": false,
+    "lrw_slerp_nan_rate": 0.0,
+    "lrw_slerp_inf_rate": 0.0,
+    "lrw_slerp_true_sphere_distance_mean": 1.0807915925979614,
+    "lrw_slerp_path_sphere_distance_mean": 1.0807915925979614,
+    "lrw_slerp_sphere_distance_error_mean": 0.0,
+    "lrw_slerp_sphere_distance_error_max": 0.0,
+    "lrw_slerp_path_shape": [
+      32,
+      1,
+      3
+    ],
+    "lrw_slerp_num_points_returned": 32,
+    "lrw_slerp_vs_reference_same_shape": true,
+    "lrw_slerp_vs_reference_mean_abs_error": 7.489386000258946e-09,
+    "lrw_slerp_vs_reference_max_abs_error": 5.960464477539063e-08,
+    "lrw_slerp_vs_reference_relative_error_mean": 1.878858668646899e-08,
+    "lrw_slerp_vs_reference_relative_error_max": 8.940698137394065e-08,
+    "available": true,
+    "runtime_ms": 9.921399992890656,
+    "peak_memory_mb": 0.0
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

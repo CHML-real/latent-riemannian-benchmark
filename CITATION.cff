@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Latent Riemannian Benchmark"
+message: "If you use this benchmark suite, please cite it using the metadata in this file."
+type: software
+authors:
+  - name: "Latent Riemannian Benchmark contributors"
+version: "1.1.3"
+date-released: "2026-06-15"
+repository-code: "https://github.com/CHML-real/latent-riemannian-benchmark"
+abstract: >-
+  A reproducible collaborator-facing benchmark suite for separating metric correctness,
+  path-function correctness, and solver-layer endpoint/distance semantics in latent-space
+  Riemannian geometry implementations, including adapter-level evidence tests for LRW.
+keywords:
+  - Riemannian geometry
+  - latent spaces
+  - benchmark
+  - geodesic
+  - pullback metric
+license: MIT

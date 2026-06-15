@@ -1,0 +1,10 @@
+benchmark_id: lrw_probe_001
+benchmark_layer: adapter
+method: lrw_package_probe
+target: latent_riemannian_world
+output_path: results/raw/lrw_probe_001.json
+module_candidates:
+  - latent_riemannian_world
+  - latent_riemannian_worlds
+  - lrw
+  - riemannian_world

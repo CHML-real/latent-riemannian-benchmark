@@ -1,0 +1,52 @@
+{
+  "benchmark_id": "lrw_probe_001",
+  "benchmark_layer": "adapter",
+  "target": "latent_riemannian_world",
+  "method": "lrw_package_probe",
+  "status": "success",
+  "available": true,
+  "module_name": "lrw",
+  "version": "0.3.0",
+  "module_file": "C:\\Users\\user\\Desktop\\Core\\Expert\\latent-riemannian-benchmark\\venv\\Lib\\site-packages\\lrw\\__init__.py",
+  "public_symbols": [
+    "bayes",
+    "geodesic",
+    "metric",
+    "transport",
+    "utils",
+    "world"
+  ],
+  "candidate_submodules": [
+    "lrw.bayes.svgd",
+    "lrw.geodesic",
+    "lrw.geodesic.bvp",
+    "lrw.geodesic.slerp",
+    "lrw.geodesic.solver",
+    "lrw.metric",
+    "lrw.metric.base",
+    "lrw.metric.bayesian",
+    "lrw.metric.fisher",
+    "lrw.metric.pullback",
+    "lrw.transport",
+    "lrw.transport.pole",
+    "lrw.transport.schild",
+    "lrw.world",
+    "lrw.world.rssm",
+    "lrw.world.state_space"
+  ],
+  "metrics": {
+    "available": true,
+    "public_symbol_count": 6,
+    "candidate_submodule_count": 16,
+    "runtime_ms": 1468.925199995283
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

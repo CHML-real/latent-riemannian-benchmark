@@ -1,0 +1,339 @@
+{
+  "benchmark_id": "lrw_geodesic_output_anatomy_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_geodesic_output_anatomy",
+  "manifold": "euclidean",
+  "method": "lrw_geodesic_output_anatomy",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "dimension": 2,
+  "batch_size": 1,
+  "n_points_requested": 24,
+  "endpoint_tolerance": 0.001,
+  "status": "success",
+  "lrw": {
+    "available": true,
+    "reason": null,
+    "geodesic_solver_class_path": "lrw.geodesic.solver.GeodesicSolver",
+    "bvp_solver_class_path": "lrw.geodesic.bvp.BVPSolver",
+    "base_metric_class_path": "lrw.metric.base.RiemannianMetric"
+  },
+  "endpoints": {
+    "z0": [
+      [
+        0.33669036626815796,
+        0.12880940735340118
+      ]
+    ],
+    "z1": [
+      [
+        0.23446236550807953,
+        0.23033303022384644
+      ]
+    ]
+  },
+  "summary": {
+    "anatomy_call_count": 4,
+    "anatomy_successful_call_count": 3,
+    "anatomy_axis_candidate_count": 2,
+    "anatomy_axis_endpoint_valid_count": 0,
+    "anatomy_best_axis_endpoint_error": 0.06626381725072861,
+    "anatomy_best_axis_name": "as_TBD",
+    "anatomy_best_axis_call": "BVPSolver.geodesic_path",
+    "anatomy_best_axis_distance_error": 0.3610605299472809,
+    "anatomy_best_axis_energy_ratio": 2.130358672095827,
+    "anatomy_geodesic_distance_relative_error_mean": 0.9900000095367432,
+    "anatomy_verdict": "no_axis_interpretation_pass"
+  },
+  "metrics": {
+    "anatomy_call_count": 4,
+    "anatomy_successful_call_count": 3,
+    "anatomy_axis_candidate_count": 2,
+    "anatomy_axis_endpoint_valid_count": 0,
+    "anatomy_best_axis_endpoint_error": 0.06626381725072861,
+    "anatomy_best_axis_name": "as_TBD",
+    "anatomy_best_axis_call": "BVPSolver.geodesic_path",
+    "anatomy_best_axis_distance_error": 0.3610605299472809,
+    "anatomy_best_axis_energy_ratio": 2.130358672095827,
+    "anatomy_geodesic_distance_relative_error_mean": 0.9900000095367432,
+    "anatomy_verdict": "no_axis_interpretation_pass",
+    "available": true,
+    "runtime_ms": 998.740800016094,
+    "peak_memory_mb": 0.0
+  },
+  "calls": [
+    {
+      "call_name": "GeodesicSolver.interpolate",
+      "status": "success",
+      "unpack": {
+        "raw_output_type": "Tensor"
+      },
+      "raw_type": "Tensor",
+      "raw_shape": [
+        24,
+        1,
+        2
+      ],
+      "raw_preview": {
+        "shape": [
+          24,
+          1,
+          2
+        ],
+        "head": [
+          0.33669036626815796,
+          0.12880940735340118,
+          0.33649665117263794,
+          0.12900163233280182,
+          0.3363029360771179,
+          0.12919385731220245,
+          0.3361092209815979,
+          0.1293845921754837
+        ]
+      },
+      "axis_candidates": [
+        {
+          "candidate_name": "as_TBD",
+          "shape": [
+            24,
+            1,
+            2
+          ],
+          "first_point": [
+            [
+              0.33669036626815796,
+              0.12880940735340118
+            ]
+          ],
+          "last_point": [
+            [
+              0.3322468400001526,
+              0.13322313129901886
+            ]
+          ],
+          "valid_shape": true,
+          "endpoint_error_start_mean": 0.0,
+          "endpoint_error_end_mean": 0.13781195878982544,
+          "endpoint_error_mean": 0.06890597939491272,
+          "endpoint_error_max": 0.13781195878982544,
+          "distance_error_mean": 0.9565289616584778,
+          "distance_error_max": 0.9565289616584778,
+          "energy_mean": 1.7055111811714596e-06,
+          "straight_energy_mean": 0.0009025047766044736,
+          "energy_ratio_over_straight": 0.001889753079854232,
+          "step_length_mean": 0.0002723086508922279,
+          "step_length_max": 0.000272902863798663,
+          "total_path_length_mean": 0.006263099145144224,
+          "norm_mean": 0.3592173755168915,
+          "norm_min": 0.35796141624450684,
+          "norm_max": 0.3604889214038849,
+          "has_nan": false,
+          "has_inf": false
+        },
+        {
+          "candidate_name": "as_BTD_transpose_0_1",
+          "shape": [
+            1,
+            24,
+            2
+          ],
+          "first_point": {
+            "shape": [
+              24,
+              2
+            ],
+            "head": [
+              0.33669036626815796,
+              0.12880940735340118,
+              0.33649665117263794,
+              0.12900163233280182,
+              0.3363029360771179,
+              0.12919385731220245,
+              0.3361092209815979,
+              0.1293845921754837
+            ]
+          },
+          "last_point": {
+            "shape": [
+              24,
+              2
+            ],
+            "head": [
+              0.33669036626815796,
+              0.12880940735340118,
+              0.33649665117263794,
+              0.12900163233280182,
+              0.3363029360771179,
+              0.12919385731220245,
+              0.3361092209815979,
+              0.1293845921754837
+            ]
+          },
+          "valid_shape": false,
+          "reason": "batch dimension does not match endpoints"
+        }
+      ]
+    },
+    {
+      "call_name": "GeodesicSolver.geodesic_distance",
+      "status": "success",
+      "unpack": {
+        "raw_output_type": "Tensor"
+      },
+      "raw_type": "Tensor",
+      "raw_shape": [
+        1
+      ],
+      "raw_value": [
+        0.0014407520648092031
+      ],
+      "true_distance": [
+        0.14407502114772797
+      ],
+      "relative_error_mean": 0.9900000095367432,
+      "relative_error_max": 0.9900000095367432,
+      "distance_value_mean": 0.0014407520648092031,
+      "true_distance_mean": 0.14407502114772797
+    },
+    {
+      "call_name": "BVPSolver.geodesic_path",
+      "status": "success",
+      "unpack": {
+        "raw_output_type": "tuple",
+        "tuple_len": 2,
+        "tuple_rest": [
+          {
+            "n_iter": 1,
+            "final_error": 1.0536712125031045e-07,
+            "converged": true
+          }
+        ],
+        "solver_info": {
+          "n_iter": 1,
+          "final_error": 1.0536712125031045e-07,
+          "converged": true
+        }
+      },
+      "raw_type": "Tensor",
+      "raw_shape": [
+        24,
+        1,
+        2
+      ],
+      "raw_preview": {
+        "shape": [
+          24,
+          1,
+          2
+        ],
+        "head": [
+          0.33669036626815796,
+          0.12880940735340118,
+          0.3268934190273285,
+          0.1292000263929367,
+          0.317096471786499,
+          0.12959064543247223,
+          0.30729952454566956,
+          0.12998126447200775
+        ]
+      },
+      "axis_candidates": [
+        {
+          "candidate_name": "as_TBD",
+          "shape": [
+            24,
+            1,
+            2
+          ],
+          "first_point": [
+            [
+              0.33669036626815796,
+              0.12880940735340118
+            ]
+          ],
+          "last_point": [
+            [
+              0.14075124263763428,
+              0.13662178814411163
+            ]
+          ],
+          "valid_shape": true,
+          "endpoint_error_start_mean": 0.0,
+          "endpoint_error_end_mean": 0.13252763450145721,
+          "endpoint_error_mean": 0.06626381725072861,
+          "endpoint_error_max": 0.13252763450145721,
+          "distance_error_mean": 0.3610605299472809,
+          "distance_error_max": 0.3610605299472809,
+          "energy_mean": 0.0019226588774472475,
+          "straight_energy_mean": 0.0009025047766044736,
+          "energy_ratio_over_straight": 2.130358672095827,
+          "step_length_mean": 0.008525862358510494,
+          "step_length_max": 0.009804746136069298,
+          "total_path_length_mean": 0.1960948258638382,
+          "norm_mean": 0.2651272714138031,
+          "norm_min": 0.19615408778190613,
+          "norm_max": 0.3604889214038849,
+          "has_nan": false,
+          "has_inf": false
+        },
+        {
+          "candidate_name": "as_BTD_transpose_0_1",
+          "shape": [
+            1,
+            24,
+            2
+          ],
+          "first_point": {
+            "shape": [
+              24,
+              2
+            ],
+            "head": [
+              0.33669036626815796,
+              0.12880940735340118,
+              0.3268934190273285,
+              0.1292000263929367,
+              0.317096471786499,
+              0.12959064543247223,
+              0.30729952454566956,
+              0.12998126447200775
+            ]
+          },
+          "last_point": {
+            "shape": [
+              24,
+              2
+            ],
+            "head": [
+              0.33669036626815796,
+              0.12880940735340118,
+              0.3268934190273285,
+              0.1292000263929367,
+              0.317096471786499,
+              0.12959064543247223,
+              0.30729952454566956,
+              0.12998126447200775
+            ]
+          },
+          "valid_shape": false,
+          "reason": "batch dimension does not match endpoints"
+        }
+      ]
+    },
+    {
+      "call_name": "BVPSolver.solve",
+      "status": "failure",
+      "error": "num_points must be >= 2"
+    }
+  ],
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

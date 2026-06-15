@@ -1,0 +1,88 @@
+{
+  "benchmark_id": "lrw_bvp_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_bvp_solver",
+  "manifold": "toy_decoder_pullback_metric",
+  "method": "lrw_bvp_geodesic_path",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "latent_dimension": 2,
+  "decoder_output_dimension": 4,
+  "batch_size": 1,
+  "n_points_requested": 24,
+  "regularization": 1e-05,
+  "chunk_size": null,
+  "solver_n_steps": 20,
+  "solver_step_size": 0.05,
+  "solver_lr": 0.1,
+  "solver_max_iter": 30,
+  "solver_tol": 0.001,
+  "beta": 6.0,
+  "sigma": 0.7,
+  "cross": 0.2,
+  "status": "failure",
+  "lrw": {
+    "available": true,
+    "bvp_class_path": "lrw.geodesic.bvp.BVPSolver",
+    "metric_class_path": "lrw.metric.pullback.PullbackMetric",
+    "reason": null,
+    "metric_class": "PullbackMetric",
+    "solver_class": "BVPSolver",
+    "raw_path_shape": [
+      24,
+      1,
+      2
+    ]
+  },
+  "solver_info": {
+    "n_iter": 30,
+    "final_error": 2.126490831375122,
+    "converged": false
+  },
+  "metrics": {
+    "lrw_bvp_endpoint_error_start_mean": 0.0,
+    "lrw_bvp_endpoint_error_end_mean": 2.126413345336914,
+    "lrw_bvp_endpoint_error_mean": 1.063206672668457,
+    "lrw_bvp_endpoint_error_max": 2.126413345336914,
+    "lrw_bvp_true_distance_mean": 4.0,
+    "lrw_bvp_path_distance_mean": 1.8735867738723755,
+    "lrw_bvp_distance_error_mean": 0.5316033363342285,
+    "lrw_bvp_distance_error_max": 0.5316033363342285,
+    "lrw_bvp_has_nan": false,
+    "lrw_bvp_has_inf": false,
+    "lrw_bvp_nan_rate": 0.0,
+    "lrw_bvp_inf_rate": 0.0,
+    "lrw_bvp_pullback_energy_mean": 51.768104553222656,
+    "lrw_bvp_pullback_energy_max": 51.768104553222656,
+    "lrw_bvp_pullback_energy_min": 51.768104553222656,
+    "lrw_bvp_pullback_length_mean": 6.481230735778809,
+    "lrw_bvp_pullback_length_max": 6.481230735778809,
+    "lrw_bvp_pullback_length_min": 6.481230735778809,
+    "lrw_bvp_path_shape": [
+      24,
+      1,
+      2
+    ],
+    "lrw_bvp_num_points_returned": 24,
+    "straight_pullback_energy_mean": 273.8246765136719,
+    "straight_pullback_length_mean": 13.487399101257324,
+    "detour_pullback_energy_mean": 27.261943817138672,
+    "detour_pullback_length_mean": 5.214801788330078,
+    "available": true,
+    "runtime_ms": 3656.55869996408,
+    "peak_memory_mb": 0.0,
+    "solver_info_key_count": 3,
+    "lrw_bvp_energy_ratio_over_straight": 0.18905565857808257,
+    "lrw_bvp_length_ratio_over_straight": 0.4805397013257074
+  },
+  "failure": {
+    "has_failure": true,
+    "failure_type": "GEO_F01_ENDPOINT_MISS",
+    "message": "LRW BVP path endpoints deviate beyond tolerance"
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

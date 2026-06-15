@@ -1,0 +1,1497 @@
+{
+  "benchmark_id": "lrw_bvp_diagnostic_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_bvp_solver",
+  "manifold": "toy_decoder_pullback_metric",
+  "method": "lrw_bvp_diagnostic",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "latent_dimension": 2,
+  "decoder_output_dimension": 4,
+  "regularization": 1e-05,
+  "chunk_size": null,
+  "endpoint_tolerance": 0.005,
+  "beta": 6.0,
+  "sigma": 0.7,
+  "cross": 0.2,
+  "lrw": {
+    "available": true,
+    "bvp_class_path": "lrw.geodesic.bvp.BVPSolver",
+    "metric_class_path": "lrw.metric.pullback.PullbackMetric",
+    "reason": null
+  },
+  "status": "success",
+  "cases": [
+    {
+      "case_id": "case_001",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 30,
+        "final_error": 2.311838150024414,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 2.3032970428466797,
+          "lrw_bvp_endpoint_error_mean": 1.1516485214233398,
+          "lrw_bvp_endpoint_error_max": 2.3032970428466797,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 1.6967031955718994,
+          "lrw_bvp_distance_error_mean": 0.5758242011070251,
+          "lrw_bvp_distance_error_max": 0.5758242011070251,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 38.281925201416016,
+          "lrw_bvp_pullback_energy_max": 38.281925201416016,
+          "lrw_bvp_pullback_energy_min": 38.281925201416016,
+          "lrw_bvp_pullback_length_mean": 5.644888877868652,
+          "lrw_bvp_pullback_length_max": 5.644888877868652,
+          "lrw_bvp_pullback_length_min": 5.644888877868652,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 0.1398045117365623
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 3.999999761581421,
+          "clamped_lrw_bvp_distance_error_mean": 5.960464477539063e-08,
+          "clamped_lrw_bvp_distance_error_max": 5.960464477539063e-08,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 2951.476318359375,
+          "clamped_lrw_bvp_pullback_energy_max": 2951.476318359375,
+          "clamped_lrw_bvp_pullback_energy_min": 2951.476318359375,
+          "clamped_lrw_bvp_pullback_length_mean": 16.899250030517578,
+          "clamped_lrw_bvp_pullback_length_max": 16.899250030517578,
+          "clamped_lrw_bvp_pullback_length_min": 16.899250030517578,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 10.77870831780937
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -0.30329692363739014,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 1.1516485214233398,
+        "raw_energy_mean": 38.281925201416016,
+        "raw_length_mean": 5.644888877868652,
+        "raw_energy_ratio_over_straight": 0.1398045117365623,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 2951.476318359375,
+        "clamped_length_mean": 16.899250030517578,
+        "clamped_energy_ratio_over_straight": 10.77870831780937,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": true,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0038695705722946653,
+        "endpoint_error_mean": 1.1516485214233398,
+        "energy_ratio_over_straight": 0.1398045117365623
+      },
+      "runtime_ms": 3793.307699961588,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_002",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 100,
+        "final_error": 2.0759613513946533,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 2.075990915298462,
+          "lrw_bvp_endpoint_error_mean": 1.037995457649231,
+          "lrw_bvp_endpoint_error_max": 2.075990915298462,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 1.9240089654922485,
+          "lrw_bvp_distance_error_mean": 0.5189977884292603,
+          "lrw_bvp_distance_error_max": 0.5189977884292603,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 53.127262115478516,
+          "lrw_bvp_pullback_energy_max": 53.127262115478516,
+          "lrw_bvp_pullback_energy_min": 53.127262115478516,
+          "lrw_bvp_pullback_length_mean": 6.61922025680542,
+          "lrw_bvp_pullback_length_max": 6.61922025680542,
+          "lrw_bvp_pullback_length_min": 6.61922025680542,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 0.19401926368321998
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.0,
+          "clamped_lrw_bvp_distance_error_mean": 0.0,
+          "clamped_lrw_bvp_distance_error_max": 0.0,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 1411.228271484375,
+          "clamped_lrw_bvp_pullback_energy_max": 1411.228271484375,
+          "clamped_lrw_bvp_pullback_energy_min": 1411.228271484375,
+          "clamped_lrw_bvp_pullback_length_mean": 14.303481101989746,
+          "clamped_lrw_bvp_pullback_length_max": 14.303481101989746,
+          "clamped_lrw_bvp_pullback_length_min": 14.303481101989746,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 5.15376586745977
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -0.07599089294672012,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 1.037995457649231,
+        "raw_energy_mean": 53.127262115478516,
+        "raw_length_mean": 6.61922025680542,
+        "raw_energy_ratio_over_straight": 0.19401926368321998,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 1411.228271484375,
+        "clamped_length_mean": 14.303481101989746,
+        "clamped_energy_ratio_over_straight": 5.15376586745977,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": true,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.004096305242610924,
+        "endpoint_error_mean": 1.037995457649231,
+        "energy_ratio_over_straight": 0.19401926368321998
+      },
+      "runtime_ms": 8933.248699991964,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_003",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 30,
+        "final_error": 2.126490831375122,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 2.126413345336914,
+          "lrw_bvp_endpoint_error_mean": 1.063206672668457,
+          "lrw_bvp_endpoint_error_max": 2.126413345336914,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 1.8735867738723755,
+          "lrw_bvp_distance_error_mean": 0.5316033363342285,
+          "lrw_bvp_distance_error_max": 0.5316033363342285,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 51.768104553222656,
+          "lrw_bvp_pullback_energy_max": 51.768104553222656,
+          "lrw_bvp_pullback_energy_min": 51.768104553222656,
+          "lrw_bvp_pullback_length_mean": 6.481230735778809,
+          "lrw_bvp_pullback_length_max": 6.481230735778809,
+          "lrw_bvp_pullback_length_min": 6.481230735778809,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 0.18905565857808257
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 3.999999761581421,
+          "clamped_lrw_bvp_distance_error_mean": 5.960464477539063e-08,
+          "clamped_lrw_bvp_distance_error_max": 5.960464477539063e-08,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 1678.602294921875,
+          "clamped_lrw_bvp_pullback_energy_max": 1678.602294921875,
+          "clamped_lrw_bvp_pullback_energy_min": 1678.602294921875,
+          "clamped_lrw_bvp_pullback_length_mean": 14.891459465026855,
+          "clamped_lrw_bvp_pullback_length_max": 14.891459465026855,
+          "clamped_lrw_bvp_pullback_length_min": 14.891459465026855,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 6.1302082642579645
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -0.12641331553459167,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 1.063206672668457,
+        "raw_energy_mean": 51.768104553222656,
+        "raw_length_mean": 6.481230735778809,
+        "raw_energy_ratio_over_straight": 0.18905565857808257,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 1678.602294921875,
+        "clamped_length_mean": 14.891459465026855,
+        "clamped_energy_ratio_over_straight": 6.1302082642579645,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": true,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.004017051559519714,
+        "endpoint_error_mean": 1.063206672668457,
+        "energy_ratio_over_straight": 0.18905565857808257
+      },
+      "runtime_ms": 2661.0065000131726,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_004",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 100,
+        "final_error": 2.0759873390197754,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 2.07598876953125,
+          "lrw_bvp_endpoint_error_mean": 1.037994384765625,
+          "lrw_bvp_endpoint_error_max": 2.07598876953125,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 1.92401123046875,
+          "lrw_bvp_distance_error_mean": 0.5189971923828125,
+          "lrw_bvp_distance_error_max": 0.5189971923828125,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 53.15210723876953,
+          "lrw_bvp_pullback_energy_max": 53.15210723876953,
+          "lrw_bvp_pullback_energy_min": 53.15210723876953,
+          "lrw_bvp_pullback_length_mean": 6.618936538696289,
+          "lrw_bvp_pullback_length_max": 6.618936538696289,
+          "lrw_bvp_pullback_length_min": 6.618936538696289,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 0.19410999737313916
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.000000476837158,
+          "clamped_lrw_bvp_distance_error_mean": 1.1920928955078125e-07,
+          "clamped_lrw_bvp_distance_error_max": 1.1920928955078125e-07,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 1411.2423095703125,
+          "clamped_lrw_bvp_pullback_energy_max": 1411.2423095703125,
+          "clamped_lrw_bvp_pullback_energy_min": 1411.2423095703125,
+          "clamped_lrw_bvp_pullback_length_mean": 14.303167343139648,
+          "clamped_lrw_bvp_pullback_length_max": 14.303167343139648,
+          "clamped_lrw_bvp_pullback_length_min": 14.303167343139648,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 5.153817134153905
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -0.07598867267370224,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 1.037994384765625,
+        "raw_energy_mean": 53.15210723876953,
+        "raw_length_mean": 6.618936538696289,
+        "raw_energy_ratio_over_straight": 0.19410999737313916,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 1411.2423095703125,
+        "clamped_length_mean": 14.303167343139648,
+        "clamped_energy_ratio_over_straight": 5.153817134153905,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": true,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.00409598323083084,
+        "endpoint_error_mean": 1.037994384765625,
+        "energy_ratio_over_straight": 0.19410999737313916
+      },
+      "runtime_ms": 8644.03789996868,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_005",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 30,
+        "final_error": 73.21751403808594,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 73.942138671875,
+          "lrw_bvp_endpoint_error_mean": 36.9710693359375,
+          "lrw_bvp_endpoint_error_max": 73.942138671875,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 73.17031860351562,
+          "lrw_bvp_distance_error_mean": 17.292579650878906,
+          "lrw_bvp_distance_error_max": 17.292579650878906,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 117795.6328125,
+          "lrw_bvp_pullback_energy_max": 117795.6328125,
+          "lrw_bvp_pullback_energy_min": 117795.6328125,
+          "lrw_bvp_pullback_length_mean": 76.65985107421875,
+          "lrw_bvp_pullback_length_max": 76.65985107421875,
+          "lrw_bvp_pullback_length_min": 76.65985107421875,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 430.1863305830238
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.0,
+          "clamped_lrw_bvp_distance_error_mean": 0.0,
+          "clamped_lrw_bvp_distance_error_max": 0.0,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 3741.65869140625,
+          "clamped_lrw_bvp_pullback_energy_max": 3741.65869140625,
+          "clamped_lrw_bvp_pullback_energy_min": 3741.65869140625,
+          "clamped_lrw_bvp_pullback_length_mean": 17.810619354248047,
+          "clamped_lrw_bvp_pullback_length_max": 17.810619354248047,
+          "clamped_lrw_bvp_pullback_length_min": 17.810619354248047,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 13.664432070348603
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -71.942138671875,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 36.9710693359375,
+        "raw_energy_mean": 117795.6328125,
+        "raw_length_mean": 76.65985107421875,
+        "raw_energy_ratio_over_straight": 430.1863305830238,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 3741.65869140625,
+        "clamped_length_mean": 17.810619354248047,
+        "clamped_energy_ratio_over_straight": 13.664432070348603,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 3.380564842204873e-05,
+        "endpoint_error_mean": 36.9710693359375,
+        "energy_ratio_over_straight": 430.1863305830238
+      },
+      "runtime_ms": 5530.358399963006,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_006",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 100,
+        "final_error": 86.13675689697266,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 86.55552673339844,
+          "lrw_bvp_endpoint_error_mean": 43.27776336669922,
+          "lrw_bvp_endpoint_error_max": 86.55552673339844,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 85.91993713378906,
+          "lrw_bvp_distance_error_mean": 20.479984283447266,
+          "lrw_bvp_distance_error_max": 20.479984283447266,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 163242.59375,
+          "lrw_bvp_pullback_energy_max": 163242.59375,
+          "lrw_bvp_pullback_energy_min": 163242.59375,
+          "lrw_bvp_pullback_length_mean": 89.79754638671875,
+          "lrw_bvp_pullback_length_max": 89.79754638671875,
+          "lrw_bvp_pullback_length_min": 89.79754638671875,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 596.1573508582212
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.0,
+          "clamped_lrw_bvp_distance_error_mean": 0.0,
+          "clamped_lrw_bvp_distance_error_max": 0.0,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 3077.479736328125,
+          "clamped_lrw_bvp_pullback_energy_max": 3077.479736328125,
+          "clamped_lrw_bvp_pullback_energy_min": 3077.479736328125,
+          "clamped_lrw_bvp_pullback_length_mean": 17.064346313476562,
+          "clamped_lrw_bvp_pullback_length_max": 17.064346313476562,
+          "clamped_lrw_bvp_pullback_length_min": 17.064346313476562,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 11.238869248420233
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            -84.55552673339844,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 43.27776336669922,
+        "raw_energy_mean": 163242.59375,
+        "raw_length_mean": 89.79754638671875,
+        "raw_energy_ratio_over_straight": 596.1573508582212,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 3077.479736328125,
+        "clamped_length_mean": 17.064346313476562,
+        "clamped_energy_ratio_over_straight": 11.238869248420233,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 2.8879856616588436e-05,
+        "endpoint_error_mean": 43.27776336669922,
+        "energy_ratio_over_straight": 596.1573508582212
+      },
+      "runtime_ms": 18097.363499982748,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_007",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 30,
+        "final_error": 29.046911239624023,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 20.92220687866211,
+          "lrw_bvp_endpoint_error_mean": 10.461103439331055,
+          "lrw_bvp_endpoint_error_max": 20.92220687866211,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 24.92220687866211,
+          "lrw_bvp_distance_error_mean": 5.230551719665527,
+          "lrw_bvp_distance_error_max": 5.230551719665527,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 12501.2998046875,
+          "lrw_bvp_pullback_energy_max": 12501.2998046875,
+          "lrw_bvp_pullback_energy_min": 12501.2998046875,
+          "lrw_bvp_pullback_length_mean": 28.540599822998047,
+          "lrw_bvp_pullback_length_max": 28.540599822998047,
+          "lrw_bvp_pullback_length_min": 28.540599822998047,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 45.65439449743427
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.0,
+          "clamped_lrw_bvp_distance_error_mean": 0.0,
+          "clamped_lrw_bvp_distance_error_max": 0.0,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 3519.223388671875,
+          "clamped_lrw_bvp_pullback_energy_max": 3519.223388671875,
+          "clamped_lrw_bvp_pullback_energy_min": 3519.223388671875,
+          "clamped_lrw_bvp_pullback_length_mean": 17.5721435546875,
+          "clamped_lrw_bvp_pullback_length_max": 17.5721435546875,
+          "clamped_lrw_bvp_pullback_length_min": 17.5721435546875,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 12.852104614816053
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            22.92220687866211,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 10.461103439331055,
+        "raw_energy_mean": 12501.2998046875,
+        "raw_length_mean": 28.540599822998047,
+        "raw_energy_ratio_over_straight": 45.65439449743427,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 3519.223388671875,
+        "clamped_length_mean": 17.5721435546875,
+        "clamped_energy_ratio_over_straight": 12.852104614816053,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0001194331784742894,
+        "endpoint_error_mean": 10.461103439331055,
+        "energy_ratio_over_straight": 45.65439449743427
+      },
+      "runtime_ms": 5326.223000010941,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_008",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": [
+        24,
+        1,
+        2
+      ],
+      "solver_info": {
+        "n_iter": 100,
+        "final_error": 1.537041187286377,
+        "converged": false
+      },
+      "baseline": {
+        "straight_pullback_energy_mean": 273.8246765136719,
+        "straight_pullback_length_mean": 13.487399101257324
+      },
+      "diagnostics": {
+        "raw": {
+          "lrw_bvp_endpoint_error_start_mean": 0.0,
+          "lrw_bvp_endpoint_error_end_mean": 1.5377922058105469,
+          "lrw_bvp_endpoint_error_mean": 0.7688961029052734,
+          "lrw_bvp_endpoint_error_max": 1.5377922058105469,
+          "lrw_bvp_true_distance_mean": 4.0,
+          "lrw_bvp_path_distance_mean": 2.462207794189453,
+          "lrw_bvp_distance_error_mean": 0.3844480514526367,
+          "lrw_bvp_distance_error_max": 0.3844480514526367,
+          "lrw_bvp_has_nan": false,
+          "lrw_bvp_has_inf": false,
+          "lrw_bvp_nan_rate": 0.0,
+          "lrw_bvp_inf_rate": 0.0,
+          "lrw_bvp_pullback_energy_mean": 70.3495864868164,
+          "lrw_bvp_pullback_energy_max": 70.3495864868164,
+          "lrw_bvp_pullback_energy_min": 70.3495864868164,
+          "lrw_bvp_pullback_length_mean": 6.623414993286133,
+          "lrw_bvp_pullback_length_max": 6.623414993286133,
+          "lrw_bvp_pullback_length_min": 6.623414993286133,
+          "lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "lrw_bvp_num_points_returned": 24,
+          "lrw_bvp_energy_ratio_over_straight": 0.2569147068208219
+        },
+        "clamped": {
+          "clamped_lrw_bvp_endpoint_error_start_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_end_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_mean": 0.0,
+          "clamped_lrw_bvp_endpoint_error_max": 0.0,
+          "clamped_lrw_bvp_true_distance_mean": 4.0,
+          "clamped_lrw_bvp_path_distance_mean": 4.0,
+          "clamped_lrw_bvp_distance_error_mean": 0.0,
+          "clamped_lrw_bvp_distance_error_max": 0.0,
+          "clamped_lrw_bvp_has_nan": false,
+          "clamped_lrw_bvp_has_inf": false,
+          "clamped_lrw_bvp_nan_rate": 0.0,
+          "clamped_lrw_bvp_inf_rate": 0.0,
+          "clamped_lrw_bvp_pullback_energy_mean": 3456.720703125,
+          "clamped_lrw_bvp_pullback_energy_max": 3456.720703125,
+          "clamped_lrw_bvp_pullback_energy_min": 3456.720703125,
+          "clamped_lrw_bvp_pullback_length_mean": 17.503257751464844,
+          "clamped_lrw_bvp_pullback_length_max": 17.503257751464844,
+          "clamped_lrw_bvp_pullback_length_min": 17.503257751464844,
+          "clamped_lrw_bvp_path_shape": [
+            24,
+            1,
+            2
+          ],
+          "clamped_lrw_bvp_num_points_returned": 24,
+          "clamped_lrw_bvp_energy_ratio_over_straight": 12.623846569037791
+        },
+        "endpoint_tolerance": 0.005,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "raw_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "raw_end_preview": [
+          [
+            0.4622078239917755,
+            0.0
+          ]
+        ],
+        "target_start_preview": [
+          [
+            -2.0,
+            0.0
+          ]
+        ],
+        "target_end_preview": [
+          [
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "compact": {
+        "status": "success",
+        "raw_endpoint_error_mean": 0.7688961029052734,
+        "raw_energy_mean": 70.3495864868164,
+        "raw_length_mean": 6.623414993286133,
+        "raw_energy_ratio_over_straight": 0.2569147068208219,
+        "clamped_endpoint_error_mean": 0.0,
+        "clamped_energy_mean": 3456.720703125,
+        "clamped_length_mean": 17.503257751464844,
+        "clamped_energy_ratio_over_straight": 12.623846569037791,
+        "raw_endpoint_pass": false,
+        "clamped_endpoint_pass": true,
+        "call_success": true,
+        "endpoint_valid": false,
+        "energy_improved": true,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.00521590667567427,
+        "endpoint_error_mean": 0.7688961029052734,
+        "energy_ratio_over_straight": 0.2569147068208219
+      },
+      "runtime_ms": 17980.789299996104,
+      "failure": {
+        "has_failure": false,
+        "failure_type": null,
+        "message": null
+      }
+    },
+    {
+      "case_id": "case_009",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 2639.3536999821663,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_010",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 8794.330500008073,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_011",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 2618.632099998649,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_012",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 8705.998999997973,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_013",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 5395.513300027233,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_014",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 17931.963100039866,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_015",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 5278.917599993292,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    },
+    {
+      "case_id": "case_016",
+      "method_name": "solve",
+      "status": "failure",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_path_shape": null,
+      "solver_info": {},
+      "baseline": {},
+      "diagnostics": {},
+      "compact": {
+        "status": "failure",
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "call_success": false,
+        "endpoint_valid": false,
+        "energy_improved": false,
+        "overall_valid": false,
+        "valid_geodesic_score": 0.0
+      },
+      "runtime_ms": 17771.9550000038,
+      "failure": {
+        "has_failure": true,
+        "failure_type": "LRW_F02_BVP_CALL_FAILED",
+        "message": "path must contain at least two points"
+      }
+    }
+  ],
+  "summary": {
+    "case_count": 16,
+    "call_success_count": 8,
+    "call_failure_count": 8,
+    "call_failure_rate": 0.5,
+    "raw_endpoint_pass_count": 0,
+    "raw_endpoint_failure_count": 8,
+    "raw_endpoint_failure_rate": 1.0,
+    "clamped_endpoint_pass_count": 8,
+    "energy_improved_count": 5,
+    "energy_only_success_count": 5,
+    "overall_valid_count": 0,
+    "overall_valid_rate": 0.0,
+    "endpoint_tolerance_pass_rate": 0.0,
+    "boundary_condition_failure_count": 8,
+    "raw_endpoint_error_mean_min": 0.7688961029052734,
+    "raw_endpoint_error_mean_max": 43.27776336669922,
+    "raw_energy_mean_min": 38.281925201416016,
+    "raw_energy_mean_max": 163242.59375,
+    "raw_energy_ratio_min": 0.1398045117365623,
+    "raw_energy_ratio_max": 596.1573508582212,
+    "clamped_energy_mean_min": 1411.228271484375,
+    "clamped_energy_mean_max": 3741.65869140625,
+    "best_by_endpoint": {
+      "case_id": "case_008",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_endpoint_error_mean": 0.7688961029052734,
+      "raw_energy_mean": 70.3495864868164,
+      "raw_length_mean": 6.623414993286133,
+      "raw_energy_ratio_over_straight": 0.2569147068208219,
+      "clamped_endpoint_error_mean": 0.0,
+      "clamped_energy_mean": 3456.720703125,
+      "valid_geodesic_score": 0.00521590667567427,
+      "endpoint_valid": false,
+      "energy_improved": true,
+      "overall_valid": false,
+      "failure_type": null
+    },
+    "best_by_energy": {
+      "case_id": "case_001",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 20,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.05,
+        "solver_max_iter": 30,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_endpoint_error_mean": 1.1516485214233398,
+      "raw_energy_mean": 38.281925201416016,
+      "raw_length_mean": 5.644888877868652,
+      "raw_energy_ratio_over_straight": 0.1398045117365623,
+      "clamped_endpoint_error_mean": 0.0,
+      "clamped_energy_mean": 2951.476318359375,
+      "valid_geodesic_score": 0.0038695705722946653,
+      "endpoint_valid": false,
+      "energy_improved": true,
+      "overall_valid": false,
+      "failure_type": null
+    },
+    "best_by_valid_score": {
+      "case_id": "case_008",
+      "method_name": "geodesic_path",
+      "status": "success",
+      "params": {
+        "solver_n_steps": 40,
+        "solver_step_size": 0.05,
+        "solver_lr": 0.1,
+        "solver_max_iter": 100,
+        "solver_tol": 0.001,
+        "n_points": 24
+      },
+      "raw_endpoint_error_mean": 0.7688961029052734,
+      "raw_energy_mean": 70.3495864868164,
+      "raw_length_mean": 6.623414993286133,
+      "raw_energy_ratio_over_straight": 0.2569147068208219,
+      "clamped_endpoint_error_mean": 0.0,
+      "clamped_energy_mean": 3456.720703125,
+      "valid_geodesic_score": 0.00521590667567427,
+      "endpoint_valid": false,
+      "energy_improved": true,
+      "overall_valid": false,
+      "failure_type": null
+    },
+    "best_overall_valid": null
+  },
+  "metrics": {
+    "available": true,
+    "runtime_ms": 140103.4388000262,
+    "diagnostic_case_count": 16,
+    "diagnostic_call_failure_rate": 0.5,
+    "diagnostic_raw_endpoint_failure_rate": 1.0,
+    "diagnostic_raw_endpoint_pass_count": 0,
+    "diagnostic_clamped_endpoint_pass_count": 8,
+    "diagnostic_raw_endpoint_error_mean_min": 0.7688961029052734,
+    "diagnostic_raw_endpoint_error_mean_max": 43.27776336669922,
+    "diagnostic_energy_improved_count": 5,
+    "diagnostic_energy_only_success_count": 5,
+    "diagnostic_overall_valid_count": 0,
+    "diagnostic_overall_valid_rate": 0.0,
+    "diagnostic_endpoint_tolerance_pass_rate": 0.0,
+    "diagnostic_boundary_condition_failure_count": 8,
+    "diagnostic_best_raw_endpoint_error": 0.7688961029052734,
+    "diagnostic_best_raw_energy_ratio": 0.1398045117365623,
+    "diagnostic_best_valid_score": 0.00521590667567427
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

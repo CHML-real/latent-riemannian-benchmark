@@ -1,0 +1,8 @@
+benchmark_id: analytic_sphere_s2_001
+seed: 42
+device: cpu
+dtype: float32
+ambient_dimension: 3
+batch_size: 128
+num_points: 32
+output_dir: results/raw

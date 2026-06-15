@@ -1,0 +1,13 @@
+benchmark_id: lrw_slerp_001
+seed: 42
+device: cpu
+dtype: float32
+dimension: 3
+batch_size: 8
+use_single_pair: true
+n_points: 32
+endpoint_tolerance: 1.0e-4
+sphere_distance_tolerance: 1.0e-4
+radial_tolerance: 1.0e-4
+reference_error_tolerance: 1.0e-4
+output_dir: results/raw

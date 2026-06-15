@@ -1,0 +1,3 @@
+benchmark_id: lrw_source_probe_001
+output_dir: results/raw
+max_source_lines: 80

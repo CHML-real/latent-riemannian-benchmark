@@ -1,0 +1,74 @@
+{
+  "benchmark_id": "lrw_geodesic_solver_euclidean_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_geodesic_solver",
+  "manifold": "euclidean",
+  "method": "lrw_geodesic_solver_euclidean",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "dimension": 2,
+  "batch_size": 1,
+  "n_points_requested": 24,
+  "solver_n_steps": 100,
+  "solver_step_size": 0.01,
+  "status": "failure",
+  "lrw": {
+    "available": true,
+    "solver_class_path": "lrw.geodesic.solver.GeodesicSolver",
+    "base_metric_class_path": "lrw.metric.base.RiemannianMetric",
+    "reason": null,
+    "metric_class": "LRBenchEuclideanMetric",
+    "solver_class": "GeodesicSolver",
+    "raw_path_shape": [
+      24,
+      1,
+      2
+    ],
+    "raw_distance_shape": [
+      1
+    ]
+  },
+  "metrics": {
+    "lrw_geodesic_solver_endpoint_error_start_mean": 0.0,
+    "lrw_geodesic_solver_endpoint_error_end_mean": 0.13781195878982544,
+    "lrw_geodesic_solver_endpoint_error_mean": 0.06890597939491272,
+    "lrw_geodesic_solver_endpoint_error_max": 0.13781195878982544,
+    "lrw_geodesic_solver_true_distance_mean": 0.14407502114772797,
+    "lrw_geodesic_solver_path_distance_mean": 0.006263099145144224,
+    "lrw_geodesic_solver_distance_error_mean": 0.9565289616584778,
+    "lrw_geodesic_solver_distance_error_max": 0.9565289616584778,
+    "lrw_geodesic_solver_has_nan": false,
+    "lrw_geodesic_solver_has_inf": false,
+    "lrw_geodesic_solver_nan_rate": 0.0,
+    "lrw_geodesic_solver_inf_rate": 0.0,
+    "lrw_geodesic_solver_energy_mean": 1.7055111811714596e-06,
+    "lrw_geodesic_solver_energy_max": 1.7055111811714596e-06,
+    "lrw_geodesic_solver_energy_min": 1.7055111811714596e-06,
+    "straight_euclidean_energy_mean": 0.0009025047766044736,
+    "lrw_geodesic_solver_energy_ratio_over_straight": 0.001889753079854232,
+    "lrw_geodesic_solver_path_shape": [
+      24,
+      1,
+      2
+    ],
+    "lrw_geodesic_solver_num_points_returned": 24,
+    "lrw_geodesic_solver_distance_value_mean": 0.0014407520648092031,
+    "lrw_geodesic_solver_geodesic_distance_error_mean": 0.9900000095367432,
+    "lrw_geodesic_solver_geodesic_distance_error_max": 0.9900000095367432,
+    "lrw_geodesic_solver_distance_has_nan": false,
+    "lrw_geodesic_solver_distance_has_inf": false,
+    "available": true,
+    "runtime_ms": 42.23409999394789,
+    "peak_memory_mb": 0.0
+  },
+  "failure": {
+    "has_failure": true,
+    "failure_type": "GEO_F01_ENDPOINT_MISS",
+    "message": "LRW GeodesicSolver interpolate path endpoints deviate beyond tolerance"
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

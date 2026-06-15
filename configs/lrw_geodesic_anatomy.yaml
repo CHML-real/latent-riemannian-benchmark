@@ -1,0 +1,20 @@
+benchmark_id: lrw_geodesic_output_anatomy_001
+seed: 42
+device: cpu
+dtype: float32
+dimension: 2
+batch_size: 1
+n_points: 24
+use_single_pair: true
+endpoint_tolerance: 0.001
+
+geodesic_n_steps: 100
+geodesic_step_size: 0.01
+
+bvp_n_steps: 20
+bvp_step_size: 0.05
+bvp_lr: 0.1
+bvp_max_iter: 50
+bvp_tol: 0.001
+
+output_dir: results/raw

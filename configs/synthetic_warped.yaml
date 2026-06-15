@@ -1,0 +1,12 @@
+benchmark_id: synthetic_warped_001
+seed: 42
+device: cpu
+dtype: float32
+batch_size: 128
+num_points: 96
+alpha: 2.0
+left_x: -1.0
+detour_x: 1.0
+y_span: 8.0
+expected_detour_better: true
+output_dir: results/raw

@@ -1,0 +1,166 @@
+{
+  "benchmark_id": "lrw_api_introspection_001",
+  "benchmark_layer": "adapter",
+  "target": "lrw_api",
+  "method": "lrw_api_introspection",
+  "status": "success",
+  "api": {
+    "class_paths": [
+      "lrw.geodesic.bvp.BVPSolver",
+      "lrw.geodesic.solver.GeodesicSolver",
+      "lrw.metric.pullback.PullbackMetric",
+      "lrw.metric.base.RiemannianMetric"
+    ],
+    "classes": [
+      {
+        "class_path": "lrw.geodesic.bvp.BVPSolver",
+        "importable": true,
+        "module_name": "lrw.geodesic.bvp",
+        "class_name": "BVPSolver",
+        "qualname": "BVPSolver",
+        "module_file": "C:\\Users\\user\\Desktop\\Core\\Expert\\latent-riemannian-benchmark\\venv\\Lib\\site-packages\\lrw\\geodesic\\bvp.py",
+        "init_signature": "(self, metric: 'RiemannianMetric', n_steps: 'int' = 20, step_size: 'float' = 0.05, lr: 'float' = 0.1, max_iter: 'int' = 50, tol: 'float' = 0.001) -> 'None'",
+        "public_attributes": [
+          "geodesic_path",
+          "solve"
+        ],
+        "methods": [
+          {
+            "name": "geodesic_path",
+            "signature": "(self, z0: 'Tensor', z1: 'Tensor', n_points: 'int' = 10) -> 'tuple[Tensor, dict]'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "solve",
+            "signature": "(self, z0: 'Tensor', z1: 'Tensor') -> 'tuple[Tensor, dict]'",
+            "kind": "function",
+            "error": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "class_path": "lrw.geodesic.solver.GeodesicSolver",
+        "importable": true,
+        "module_name": "lrw.geodesic.solver",
+        "class_name": "GeodesicSolver",
+        "qualname": "GeodesicSolver",
+        "module_file": "C:\\Users\\user\\Desktop\\Core\\Expert\\latent-riemannian-benchmark\\venv\\Lib\\site-packages\\lrw\\geodesic\\solver.py",
+        "init_signature": "(self, metric: 'RiemannianMetric', n_steps: 'int' = 100, step_size: 'float' = 0.01) -> 'None'",
+        "public_attributes": [
+          "geodesic_distance",
+          "interpolate",
+          "shoot"
+        ],
+        "methods": [
+          {
+            "name": "geodesic_distance",
+            "signature": "(self, z0: 'Tensor', z1: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "interpolate",
+            "signature": "(self, z0: 'Tensor', z1: 'Tensor', n_points: 'int' = 10) -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "shoot",
+            "signature": "(self, z0: 'Tensor', v0: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "class_path": "lrw.metric.pullback.PullbackMetric",
+        "importable": true,
+        "module_name": "lrw.metric.pullback",
+        "class_name": "PullbackMetric",
+        "qualname": "PullbackMetric",
+        "module_file": "C:\\Users\\user\\Desktop\\Core\\Expert\\latent-riemannian-benchmark\\venv\\Lib\\site-packages\\lrw\\metric\\pullback.py",
+        "init_signature": "(self, decoder: 'Callable[[Tensor], Tensor]', chunk_size: 'int | None' = None, regularization: 'float' = 1e-05) -> 'None'",
+        "public_attributes": [
+          "christoffel",
+          "geodesic_acceleration",
+          "local_volume_element",
+          "metric_tensor"
+        ],
+        "methods": [
+          {
+            "name": "local_volume_element",
+            "signature": "(self, z: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "metric_tensor",
+            "signature": "(self, z: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          }
+        ],
+        "error": null
+      },
+      {
+        "class_path": "lrw.metric.base.RiemannianMetric",
+        "importable": true,
+        "module_name": "lrw.metric.base",
+        "class_name": "RiemannianMetric",
+        "qualname": "RiemannianMetric",
+        "module_file": "C:\\Users\\user\\Desktop\\Core\\Expert\\latent-riemannian-benchmark\\venv\\Lib\\site-packages\\lrw\\metric\\base.py",
+        "init_signature": "(self, /, *args, **kwargs)",
+        "public_attributes": [
+          "christoffel",
+          "geodesic_acceleration",
+          "metric_tensor"
+        ],
+        "methods": [
+          {
+            "name": "christoffel",
+            "signature": "(self, z: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "geodesic_acceleration",
+            "signature": "(self, z: 'Tensor', v: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          },
+          {
+            "name": "metric_tensor",
+            "signature": "(self, z: 'Tensor') -> 'Tensor'",
+            "kind": "function",
+            "error": null
+          }
+        ],
+        "error": null
+      }
+    ],
+    "class_count": 4,
+    "importable_class_count": 4,
+    "method_count": 10,
+    "signature_count": 10,
+    "all_importable": true
+  },
+  "metrics": {
+    "api_class_count": 4,
+    "api_importable_class_count": 4,
+    "api_method_count": 10,
+    "api_signature_count": 10,
+    "runtime_ms": 1346.9534000032581
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  },
+  "skip": {
+    "is_skipped": false,
+    "reason": null
+  }
+}

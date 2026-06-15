@@ -1,0 +1,12 @@
+benchmark_id: stress_scaling_001
+seed: 42
+device: auto
+dtype: float32
+# Default grid is intentionally light enough for quick local validation.
+# Use larger values after the runner is verified.
+dimensions: [2, 8, 32, 128]
+batch_sizes: [1, 16, 64]
+num_points: [32, 64]
+max_endpoint_error: 1.0e-5
+max_distance_error: 1.0e-5
+output_dir: results/raw

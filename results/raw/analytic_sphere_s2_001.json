@@ -1,0 +1,36 @@
+{
+  "benchmark_id": "analytic_sphere_s2_001",
+  "benchmark_layer": "analytic",
+  "manifold": "sphere",
+  "method": "sphere_great_circle",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "ambient_dimension": 3,
+  "batch_size": 128,
+  "num_points": 32,
+  "status": "success",
+  "metrics": {
+    "endpoint_error_start_mean": 2.917157715387475e-08,
+    "endpoint_error_end_mean": 2.9450038852019134e-08,
+    "endpoint_error_mean": 2.9310808002946942e-08,
+    "endpoint_error_max": 1.341104507446289e-07,
+    "true_sphere_distance_mean": 1.6301264762878418,
+    "path_sphere_distance_mean": 1.6301264762878418,
+    "sphere_distance_error_mean": 6.596688706395071e-08,
+    "sphere_distance_error_max": 1.047798491526919e-06,
+    "sphere_radial_error_mean": 5.369656719267368e-09,
+    "sphere_radial_error_max": 1.1920928955078125e-07,
+    "has_nan": false,
+    "has_inf": false,
+    "nan_rate": 0.0,
+    "inf_rate": 0.0,
+    "runtime_ms": 197.2387199998593,
+    "peak_memory_mb": 0.0
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  }
+}

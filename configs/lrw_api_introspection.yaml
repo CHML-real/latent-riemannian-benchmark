@@ -1,0 +1,10 @@
+benchmark_id: lrw_api_introspection_001
+benchmark_layer: adapter
+target: lrw_api
+method: lrw_api_introspection
+output_path: results/raw/lrw_api_introspection_001.json
+class_paths:
+  - lrw.geodesic.bvp.BVPSolver
+  - lrw.geodesic.solver.GeodesicSolver
+  - lrw.metric.pullback.PullbackMetric
+  - lrw.metric.base.RiemannianMetric

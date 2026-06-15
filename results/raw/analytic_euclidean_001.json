@@ -1,0 +1,37 @@
+{
+  "benchmark_id": "analytic_euclidean_001",
+  "benchmark_layer": "analytic",
+  "manifold": "euclidean",
+  "method": "euclidean_line",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "dimension": 8,
+  "batch_size": 128,
+  "num_points": 32,
+  "status": "success",
+  "metrics": {
+    "endpoint_error_start_mean": 0.0,
+    "endpoint_error_end_mean": 0.0,
+    "endpoint_error_mean": 0.0,
+    "endpoint_error_max": 0.0,
+    "true_distance_mean": 3.8564062118530273,
+    "path_distance_mean": 3.8564062118530273,
+    "distance_error_mean": 4.400160591444546e-08,
+    "distance_error_max": 1.940225331509282e-07,
+    "energy_mean": 0.5128443837165833,
+    "energy_max": 1.5039448738098145,
+    "energy_min": 0.07598525285720825,
+    "has_nan": false,
+    "has_inf": false,
+    "nan_rate": 0.0,
+    "inf_rate": 0.0,
+    "runtime_ms": 5.317704999995954,
+    "peak_memory_mb": 0.0
+  },
+  "failure": {
+    "has_failure": false,
+    "failure_type": null,
+    "message": null
+  }
+}
