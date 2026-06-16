@@ -163,7 +163,7 @@ Recommended pre-release check:
 ```bash
 python -m pytest -v
 python -m lrbench.runners.run_report --raw-dir results/raw --report-dir results/reports
-python -m lrbench.runners.run_lrw_evidence_report --config configs/lrw_evidence_report.yaml
+python -m lrbench.runners.run_lrw_evidence_report --config configs/lrw_evidence_report.yaml 
 ```
 
 When publishing, make clear that this repository is the LRW collaborator-facing benchmark suite and that solver-layer failures such as `GEO_F01_ENDPOINT_MISS` are expected evidence outputs when endpoint-preserving geodesic expectations are not met.
