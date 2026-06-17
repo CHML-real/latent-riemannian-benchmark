@@ -4,7 +4,7 @@ A reproducible benchmark suite for evaluating Riemannian geometry computation in
 
 This repository is intended to serve as a **collaborator-facing benchmark suite for LRW**. When the LRW maintainer/collaborators adopt or co-maintain this repository, it may be described as an official LRW benchmark suite. Until repository ownership and collaborator access are finalized, the code and reports should be read as an official-benchmark candidate prepared for collaborative use.
 
-The benchmark is designed to separate **metric correctness**, **path-function correctness**, and **solver-layer endpoint/distance semantics**. It currently includes analytic baselines, synthetic warped/pullback metrics, stress scaling, LRW adapter probes, and an evidence-report generator.
+The benchmark is designed to separate **metric correctness**, **path-function correctness**, and **solver-layer endpoint/distance semantics**. It currently includes analytic baselines, synthetic warped/pullback metrics, stress scaling, LRW adapter probes, an evidence-report generator, and a local LLM latent curvature experiment.
 
 > Important: LRW adapter benchmarks may intentionally report failures when endpoint-preserving geodesic expectations are not met. These failures are evidence outputs, not harness errors.
 
@@ -20,6 +20,7 @@ The benchmark is designed to separate **metric correctness**, **path-function co
 | LRW adapter: path function | Validate simple spherical interpolation. | `lrw_slerp_001` |
 | LRW adapter: solver layer | Test endpoint-preserving geodesic expectations and diagnose mismatches. | `lrw_bvp_001`, `lrw_geodesic_solver_euclidean_001` |
 | Evidence bundle | Aggregate pass/fail results into a public report and CSV matrix. | `lrw_evidence_report.md` |
+| LRW + local LLM: latent curvature | Measure Riemannian curvature of a local 14B LLM's embedding space using lrw PullbackMetric with a nonlinear MLP decoder. | `qwen_curvature_002` |
 
 ## Quickstart
 
@@ -80,6 +81,8 @@ type .\results\reports\lrw_evidence_report.md
 | `results/reports/summary.csv` | Machine-readable global summary. |
 | `results/reports/lrw_evidence_report.md` | Component-level LRW adapter evidence report. |
 | `results/reports/lrw_evidence_matrix.csv` | LRW evidence matrix for downstream analysis. |
+| `results/curvature_experiment/qwen_curvature_002.json` | Qwen2.5-14B latent curvature metrics (full). |
+| `results/curvature_experiment/qwen_curvature_002.png` | Qwen2.5-14B curvature figure (3-panel). |
 
 ## Interpreting LRW adapter failures
 
@@ -113,6 +116,41 @@ The report uses explicit failure-mode codes instead of vague pass/fail labels:
 | `API_SEM02_NO_AXIS_INTERPRETATION_PASS` | Endpoint miss is not fixed by common tensor-axis interpretations. |
 | `ENERGY_ONLY_SUCCESS` | Energy improves while endpoint validity still fails. |
 
+## Qwen2.5-14B Latent Curvature Experiment
+
+This track measures Riemannian curvature in the embedding space of a locally-running 14B LLM using `lrw.metric.pullback.PullbackMetric` with a nonlinear MLP decoder.
+
+| Setting | Value |
+|---|---|
+| Model | `Qwen2.5-Coder-14B-Q4_K_M` (GGUF, llama-cpp-python) |
+| Hardware | NVIDIA RTX 5060 Ti 16GB, Ubuntu 24 |
+| Embedding extraction | `pooling_type=1` (mean pooling, dim=5120) |
+| Dimensionality reduction | PCA → 16-dim latent |
+| Decoder | 4-layer MLP with Tanh activations (16 → 64 → 128 → 64 → 128) |
+| Metric | `lrw.metric.pullback.PullbackMetric` (regularization=1e-4) |
+| Prompts | 16 sentences across 4 semantic categories |
+
+### Key findings
+
+| Rank | Concept | Condition Number | Interpretation |
+|---|---|---|---|
+| 1 (highest) | `수학` (mathematics) | 2107 | Highest curvature — complex nonlinear encoding |
+| 2 | `신경망` (neural network) | 778 | Technical AI concept, dense representation |
+| 3 | `음악` (music) | 632 | Abstract concept encoded with high anisotropy |
+| Last | `커피` (coffee) | 1.0 | Near-flat region — simple everyday concept |
+
+Math/Science and Coding/AI concepts show significantly higher curvature than everyday language (weather, coffee), suggesting the model encodes abstract/technical knowledge in geometrically richer regions of its latent space. The Riemannian distance matrix is also consistent with semantic proximity: `날씨`/`커피` (weather/coffee) distance = 0.46, while `수학`/`이항대립` (math/binary opposition) distance = 6.7.
+
+### Reproduce
+
+```bash
+# Requires: llama-cpp-python (CUDA build), lrw, torch, matplotlib
+python lrbench/qwen_curvature_experiment.py
+# Output saved to results/curvature_experiment/
+```
+
+> Note: Update `MODEL_PATH` in the script to point to your local GGUF file.
+
 ## Project layout
 
 ```text
@@ -124,8 +162,12 @@ latent-riemannian-benchmark/
 │  └─ REPRODUCIBILITY.md
 ├─ configs/
 ├─ lrbench/
+│  └─ qwen_curvature_experiment.py
 ├─ tests/
 └─ results/
+   ├─ raw/
+   ├─ reports/
+   └─ curvature_experiment/
 ```
 
 ## Scope
